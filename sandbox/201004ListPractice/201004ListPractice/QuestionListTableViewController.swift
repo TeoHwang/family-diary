@@ -84,14 +84,27 @@ class QuestionListTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if let cell = sender as? UITableViewCell,
+           let index = tableView.indexPath(for: cell),
+           let destinationVC = segue.destination as? AnswerViewController {
+            
+            destinationVC.answerText = "This is answer of \(index)"
+
+
+
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
+  
+
 
 }
